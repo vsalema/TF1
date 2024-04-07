@@ -1,15 +1,93 @@
-<!DOCTYPE html>
-<html lang='en' class=''>
-<meta charset='UTF-8'>
-  <title>tf1</title>
-<meta name="robots" content="noindex">
+<html>
 <head>
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <meta name="theme-color" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="robots" content="noindex, nofollow">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>HLS PLAYER</title>
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <meta name="referrer" content="no-referrer">
 </head>
-<body>
+<body bgcolor="black" style="margin:0">
 <div id="Plyr3"></div>
-</body>
-<script  src="js/tf1.js"></script>
+<script src="//ssl.p.jwpcdn.com/player/v/8.17.7/jwplayer.js"></script>
+<script type="text/javascript">
+  jwplayer.key = "oXqNrzSZ9lQbo5mgdmfM+TwMP/GR4bAiKFXy8nlANTs=";
+  
+  const url1 = "https://live-tf1-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI4MC4xNS4yOS4zNiIsImNtY2QiOiIiLCJleHAiOjE3MTI1MTA5MzQsImdpZCI6IjdiYzExMjg0LTRlM2UtNGUzOC1iMzg3LWJmNmQwMTNjY2M5NSIsImlhdCI6MTcxMjQ5NjUzNCwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjoyMDAwMDAwLCJzdGVtIjoiL291dC92MS83ODA1NDJmNTE2ZjE0M2ZjOGFkOWJmMTQ2MjIzMTZlNy90ZjEtY21hZiIsInN1YiI6IjdiYzExMjg0LTRlM2UtNGUzOC1iMzg3LWJmNmQwMTNjY2M5NSJ9.KWFo2WY1V9dBZyL4JmGwFJLuJ-mKgFhzG6ldM3JpiTA/out/v1/780542f516f143fc8ad9bf14622316e7/tf1-cmaf/index.m3u8";
+  const url2 = "http://azrotv.com/pyr/msg/geo/playlist.m3u8";
+
+  function checkURL(url) {
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return true; // URL is reachable
+        } else {
+          return false; // URL is not reachable
+        }
+      })
+      .catch(error => {
+        console.error('Error checking URL:', error);
+        return false; // Error occurred, URL is not reachable
+      });
+  }
+
+  checkURL(url1)
+    .then(isOnline => {
+      const playlist = {
+        playlist: [{
+          file: isOnline ? url1 : url2
+        }],
+        allowfullscreen: 'true',
+        skin: "",
+        width: "100%",
+        height: "100%",
+        stretching: 'exactfit',
+        androidhls: 'true',
+        hlshtml: true,
+        primary: "html5",
+        autostart: "true"
+      };
+      
+      jwplayer("Plyr3").setup(playlist);
+    });
+</script>
 </body>
 </html>
+
+
+<div style="display:none"> 
+   <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4637326,4,24,200,50,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4637326&101" alt="web statistic" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</div>
+
+</div> 
+
+</div> 
+<script>
+function myFunctionShow() {
+  var x = document.getElementById("laoad_Adbl");
+  var y = document.getElementById("ad_asd");
+  var p = document.getElementById("laoad_Adbl2");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+ 
+  } else {
+    x.style.display = "block";
+    p.style.display = "block";
+    y.style.display = "none";
+  }
+}
+</script>
+
