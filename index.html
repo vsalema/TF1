@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Refresh" content="300">
-<title>dash player</title>
+<title>tvi</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link href="https://unpkg.com/videojs-max-quality-selector@0.9.1/dist/videojs-max-quality-selector.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ia904708.us.archive.org/25/items/tresmin_20230107_0910/tresmin.css" rel="stylesheet" type="text/css">
  <link href="https://cdn.jsdelivr.net/npm/videojs-logo@2.1.1/dist/videojs-logo.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-	<style>
+<style>
 @import url("https://ia601509.us.archive.org/22/items/tooltip_202210/tooltip.css");
 .container{margin: auto; width:700px;}
 .vjs-brand-container-link{position:relative;top:14px;left:0px;}
@@ -32,11 +30,11 @@ body {
 <div class="moveToVideoJs" style="position: absolute; margin-left: auto; margin-right: auto; left: 49px; right: 0; text-align: center; top: 4px; width:  visibility: visible;"><span><span class="hero__headline__name" style="color: #fff;font-weight: bold;"></span></span>
 	</div></div>
 <div id="player" hidden></div>
-<video class='playads js-video video-js vjs-16-9 vjs-big-play-centered'  controls='' loop autoplay height='520' id='js-video-horsa' playsinline width='920' poster="">
-
+<video class='playads js-video video-js vjs-16-9 vjs-big-play-centered'  controls='' autoplay height='520' id='js-video-horsa' playsinline width='920' poster="">
+ <source src="https://sv7.data-stream.top:8443/live/tf3-HD/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NC8xNS8yMDI0IDY6MjA6MjMgUE0maGFzaF92YWx1ZT1hVTRNN1B2M0kyRDlvdXFQaTlFU1hRPT0mdmFsaWRtaW51dGVzPTMwJnN0cm1fbGVuPTEx" type="application/x-mpegURL">
 </video>
 
-<video class='moveToVideoJs js-video-hidden js-video js-video video-js vjs-big-play-centered vjs-default-skin small-player'  controls='' loop autoplay height='160' id='js-video-hengest' playsinline width='300'></video>
+<video class='moveToVideoJs js-video-hidden js-video js-video video-js vjs-big-play-centered vjs-default-skin small-player'  controls='' autoplay height='160' id='js-video-hengest' playsinline width='300'></video>
 
  <script src="https://play.shidur.net/node_modules/video.js/dist/video.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.0/Youtube.min.js'></script>
@@ -45,7 +43,7 @@ body {
 </script>
 <script id="rendered-js">
 // url movie
-const stream_one = "https://helpfulpost.net/tf1/tracks-v1a1/mono.m3u8?token=4119f954425c64b26f50c87616e0f1f0d37b7182-e38b9f07710f65a3bec4b61a0ecf8b92-1713188751-1713177951";
+const stream_one = "https://sv7.data-stream.top/c3ac008b6ae585874ee92a6064a562ccdc1fef6e125ae71c0b7537fc5bbf345d/hls/tf3-HD.m3u8";
 // url trailer.
 const stream_two = "";
 const horsa = videojs('#js-video-horsa', options);
