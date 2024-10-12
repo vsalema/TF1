@@ -1,204 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang='en' class=''>
+
 <head>
-<meta name="theme-color" content="#ff0015">  
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="">
-<title>TF1</title>
-<!-- LOAD CDN CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
 
-<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
-
-   
-<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
-
-
-
-<!-- Splide Slider CSS -->
-
-
-
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
-
- 
- <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
-       
+  <meta name="robots" content="noindex">
 
   
 
-<style>
-#myVideo {
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-
-  
-  }
-
-video {
-	width: 100%;
-}
-
- .row > * {
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * .0);
-  padding-left: calc(var(--bs-gutter-x) * .0);
-  margin-top: var(--bs-gutter-y);
-} 
   
   
+
+  <style id="INLINE_PEN_STYLESHEET_ID">
+    
   </style>
+
   
-  
-  </head>
+
+</head>
+
 <body>
- 
- <!-- Start Pre Loader -->
-
-
-
-
-    
-   
-    
-   
-<!-- Start Page Content Area -->
-<div class="page-content-area vfx-item-ptb pt-0">
-
-  <div class="container-fluid bg-dark video-player-base"> 
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="video-posts-video">         
-          
-              <video id="v_player" class="video-js vjs-big-play-centered skin-blue vjs-16-9" controls preload="auto" playsinline crossorigin="anonymous" width="640" height="450" poster="https://www.goiptv.top/upload/SIC-LOGO.png" data-setup="{}" autoplay="true">
-							  	
-		  	<!-- video source -->
-		            <source src="https://live-tf1-hls-ssai.cdn-0.diff.tf1.fr/9023effe3c16b0475d35e9f31c778b5c/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4Nzc3NjExLCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODc2MzIxMSwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS8yYTVlZjJhNGNlNGE0MTIwOWUwYTg4MTA3NGQxNTkzMi90ZjEtY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.4agdKYm9Gqq_XUZX7OIa01o3QnDoD9_qe1T9K4T7aI8/out/v1/2a5ef2a4ce4a41209e0a881074d15932/tf1-cmaf/index.m3u8" type="application/x-mpegURL" /> 
-          
-			<!-- worning text if needed -->
-			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-</video>
-                 
-        </div>
-      </div>
-    </div>  
-  </div>
-
- 
-<!-- End Page Content Area --> 
-
-
-
-
-
-<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
-
-
- 
-
- <script src="https://www.goiptv.top/site_assets/videojs_player/plugins/videojs-chromecast.min.js"></script>
-  
- <script>
-        var player = videojs('v_player',{techOrder:['chromecast','html5']});
-    
-        player.viavi({
-            shareMenu: false,
-            
-            video_id: 'livetv19',
-            resume: true,
-            contextMenu: false,
-                      buttonRewind: false,
-          buttonForward: false,
-                      
-            mousedisplay:true,
-            textTrackSettings: false             
-        });
-
-        player.pip();
-
-        
-        player.chromecast({ metatitle: '', metasubtitle: 'Release : ' });         
-      
-      
-
-         player.on('vroll', function(event, data) {
-            var ad_id = data.id;
-            var action = data.action;
-
-            //alert(ad_id);
-            //alert(action);
-
-           });
-
-          
-      
-     player.ready(function(){
-     var player_ = this;
-     var show_on_start =true;
-     var close_delay=5;
-     var parent = this.el().parentNode;
-     console.log(parent.id);
-     var closeBtn = parent.querySelector('.over-close');
-     var overlay = parent.querySelector('.div-over');
-     var timer;
-     function delay() {
-      clearTimeout(timer);
-      if(parseInt(close_delay)>0) {
-        closeBtn.innerHTML=close_delay;
-        var timer =window.setTimeout(delay, 1000);
-        close_delay--;
-      } else {
-        closeBtn.innerHTML='';
-        closeBtn.className='over-close';
-      }
-     }
-     function showOverlay() {
-      console.log('delay:'+close_delay);
-      if(parseInt(close_delay)>0) {
-        delay();
-      } else {
-        closeBtn.className = 'over-close';
-      }
-      overlay.style.display='block';
-     }
-
-     closeBtn.addEventListener('click',function(e) {
-      overlay.style.display='none';
-      player_.play();
-     }, false);
-
-     this.on("pause", function(){
-      if (!this.seeking() && this.paused()) {
-        // Show overlay
-        showOverlay();
-      }
-     });
-
-     this.on('play', function(e) {
-      // Hide overlay
-      overlay.style.display='none';
-     });
-     if(show_on_start) {
-      this.pause(); showOverlay();
-     } else {
-      overlay.style.display='none';
-     }
-  });
-         
-    </script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script>  
+  <head>
+<link href="https://unpkg.com/video.js@7.18.1/dist/video-js.min.css" rel="stylesheet" />
+</head>
+<body>
+<video autoplay id="playerOne" class="fm-video video-js vjs-16-9 vjs-big-play-centered" controls preload="auto" data-setup="{}"> </video>
+<script src="https://unpkg.com/video.js@7.18.1/dist/video.min.js"></script>
+<script src='https://unpkg.com/@videojs/http-streaming@2.14.0/dist/videojs-http-streaming.min.js'></script>
+<script src='https://unpkg.com/videojs-playlist@5.0.0/dist/videojs-playlist.min.js'></script>
+<!-- var types = {mp4:'video/mp4',webm:'video/webm', m3u,m3u8: 'application/x-mpegURL'}; -->
+<script>
+// console.clear();
+'use strict';
+var videoPlayer = window.videoPlayer || {};
+(function (o) { 
+var types = {mp4:'video/mp4',webm:'video/webm', m3u: 'application/x-mpegURL'};
+var vPlaylist = [
+// {sources: [{src: baseUrl+'1.mp4', type: types.mp4}]},
+// {sources: [{src: baseUrl+'2.mp4', type: types.mp4}]},
+// {sources: [{src: baseUrl+'3.mp4', type: types.mp4}]},
+// {sources: [{src: baseUrl+'4.mp4', type: types.mp4}]}
+// ,   
+{sources: [{
+src: 'https://live-tf1-hls-ssai.cdn-0.diff.tf1.fr/9023effe3c16b0475d35e9f31c778b5c/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4Nzc3NjExLCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODc2MzIxMSwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS8yYTVlZjJhNGNlNGE0MTIwOWUwYTg4MTA3NGQxNTkzMi90ZjEtY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.4agdKYm9Gqq_XUZX7OIa01o3QnDoD9_qe1T9K4T7aI8/out/v1/2a5ef2a4ce4a41209e0a881074d15932/tf1-cmaf/index.m3u8',
+type: 'application/x-mpegURL'
+}],
+textTracks: [{
+src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt',
+srclang: 'es',
+default: 'true',
+label: 'English'
+}
+],
+poster: 'https://ik.imagekit.io/shdtv/otros/bbb-splash_Y4tppaoHB.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648259139858'
+}, {
+sources: [{
+src: 'https://raw.githubusercontent.com/ietf-wg-cellar/matroska-test-files/master/test_files/test2.mkv',
+type: 'video/mp4'
+}],
+textTracks: [{
+src: 'subtitulo.vtt',
+srclang: 'es',
+default: 'true',
+label: 'Spanish'
+}
+],
+poster: 'image.jpg'
+}, {
+sources: [{
+src: 'https://github.com/nuxeo/nuxeo-ui-elements/blob/master/demo/nuxeo-video-viewer/sample.webm?raw=true',
+type: 'video/webm'
+}],
+textTracks: [{
+src: 'subtitulo.vtt',
+srclang: 'es',
+default: 'true',
+label: 'Spanish'
+}
+],
+poster: 'imagen.jpg'
+}];
+// [{ ... }, ... ]
+var rate = 1; // playback rate
+var options = {
+autoplay: false,
+controls: true,
+muted: false,
+fluid: true,
+playbackRates: [1,1.25,1.5,1.75,2,2.25,2.5],
+inactivityTimeout: 0 // 0 indicates that the user will never be considered inactive.
+};
+var player = videojs('playerOne', options);
+player.ready(function() {
+// videojs.log('Ready Player One');
+this.playlist(vPlaylist);
+this.playlist.autoadvance(0);
+this.playlist.repeat(true);  // Allow skipping back to first video in playlist.
+});
+// player.on(['duringplaylistchange','playlistchange','beforeplaylistitem', 'playlistitem','playlistsorted'], function(e) { videojs.log(e.type); });
+player.on('beforeplaylistitem', function() { rate = this.playbackRate(); });
+player.on('playlistitem', function() { this.playbackRate(rate); });
+// var buttonComponent = videojs.getComponent('Button');
+// var buttons = ['vprevious','vnext'];
+// var buttonObj; 
+// for (var i=0; i < buttons.length; i++) {
+// var button = buttons[i];
+// buttonObj = videojs.extend(buttonComponent, {   
+// constructor: function() {
+// buttonComponent.apply(this, arguments);
+// this.addClass('icon-' +button);
+// this.controlText(button);
+// },
+// handleClick: function(e) {
+// switch(button) {
+// case 'vprevious': player.playlist.previous(); console.log(button); break;
+// case 'vnext': player.playlist.next(); console.log(button);  break;
+// }
+// }
+// });
+// videojs.registerComponent(button,buttonObj);
+// }
+// player.getChild('controlBar').addChild('vprevious', {},0);
+// player.getChild('controlBar').addChild('vnext',{},2);
+var buttonComponent = videojs.getComponent('Button');
+var prevButton = videojs.extend(buttonComponent, {   
+constructor: function() {
+buttonComponent.apply(this, arguments);
+this.addClass('vjs-icon-previous-item');
+this.controlText('Previous');
+},
+handleClick: function(e) {
+player.playlist.previous();
+}
+});
+var nextButton = videojs.extend(buttonComponent, {   
+constructor: function() {
+buttonComponent.apply(this, arguments);
+this.addClass('vjs-icon-next-item');
+this.controlText('Next');
+},
+handleClick: function(e) {
+player.playlist.next();
+// this.controlText('Next (part 3)');
+}
+});
+videojs.registerComponent('prevButton', prevButton);
+videojs.registerComponent('nextButton', nextButton);
+player.getChild('controlBar').addChild('prevButton', {}, 0);
+player.getChild('controlBar').addChild('nextButton', {}, 2);
+})(videoPlayer);
+</script>
 </body>
+  
+  
+</body>
+
 </html>
