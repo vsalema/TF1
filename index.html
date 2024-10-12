@@ -1,33 +1,204 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
-
+<html lang="pt">
 <head>
+<meta name="theme-color" content="#ff0015">  
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+<title>TF1</title>
+<!-- LOAD CDN CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 
-  <meta charset='UTF-8'>
-  <title>ELEVEN2</title>
-<link rel="icon" type="image/x-icon" href="https://players.akamai.com/favicon.png">
-  <meta name="robots" content="noindex">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
+
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
+
+   
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
+
+
+
+<!-- Splide Slider CSS -->
+
+
+
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
+
+ 
+ <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
+       
 
   
-  <style>
-    .overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: black;
-  z-index: 10;
+
+<style>
+#myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+
+  
+  }
+
+video {
+	width: 100%;
 }
+
+ .row > * {
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .0);
+  padding-left: calc(var(--bs-gutter-x) * .0);
+  margin-top: var(--bs-gutter-y);
+} 
+  
+  
   </style>
-
+  
+  
   </head>
-
 <body>
-  <iframe src="//popcdn.day/play.php?stream=TF1FR"  allow="encrypted-media" class="embed-responsive-item overlay" allowfullscreen="yes" scrolling="no" frameborder="0"></iframe>
-  
-  
-</body>
+ 
+ <!-- Start Pre Loader -->
 
+
+
+
+    
+   
+    
+   
+<!-- Start Page Content Area -->
+<div class="page-content-area vfx-item-ptb pt-0">
+
+  <div class="container-fluid bg-dark video-player-base"> 
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="video-posts-video">         
+          
+              <video id="v_player" class="video-js vjs-big-play-centered skin-blue vjs-16-9" controls preload="auto" playsinline crossorigin="anonymous" width="640" height="450" poster="https://www.goiptv.top/upload/SIC-LOGO.png" data-setup="{}" autoplay="true">
+							  	
+		  	<!-- video source -->
+		            <source src="https://live-tf1-hls-ssai.cdn-0.diff.tf1.fr/9023effe3c16b0475d35e9f31c778b5c/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4Nzc3NjExLCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODc2MzIxMSwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS8yYTVlZjJhNGNlNGE0MTIwOWUwYTg4MTA3NGQxNTkzMi90ZjEtY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.4agdKYm9Gqq_XUZX7OIa01o3QnDoD9_qe1T9K4T7aI8/out/v1/2a5ef2a4ce4a41209e0a881074d15932/tf1-cmaf/index.m3u8" type="application/x-mpegURL" /> 
+          
+			<!-- worning text if needed -->
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+                 
+        </div>
+      </div>
+    </div>  
+  </div>
+
+ 
+<!-- End Page Content Area --> 
+
+
+
+
+
+<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
+
+
+ 
+
+ <script src="https://www.goiptv.top/site_assets/videojs_player/plugins/videojs-chromecast.min.js"></script>
+  
+ <script>
+        var player = videojs('v_player',{techOrder:['chromecast','html5']});
+    
+        player.viavi({
+            shareMenu: false,
+            
+            video_id: 'livetv19',
+            resume: true,
+            contextMenu: false,
+                      buttonRewind: false,
+          buttonForward: false,
+                      
+            mousedisplay:true,
+            textTrackSettings: false             
+        });
+
+        player.pip();
+
+        
+        player.chromecast({ metatitle: '', metasubtitle: 'Release : ' });         
+      
+      
+
+         player.on('vroll', function(event, data) {
+            var ad_id = data.id;
+            var action = data.action;
+
+            //alert(ad_id);
+            //alert(action);
+
+           });
+
+          
+      
+     player.ready(function(){
+     var player_ = this;
+     var show_on_start =true;
+     var close_delay=5;
+     var parent = this.el().parentNode;
+     console.log(parent.id);
+     var closeBtn = parent.querySelector('.over-close');
+     var overlay = parent.querySelector('.div-over');
+     var timer;
+     function delay() {
+      clearTimeout(timer);
+      if(parseInt(close_delay)>0) {
+        closeBtn.innerHTML=close_delay;
+        var timer =window.setTimeout(delay, 1000);
+        close_delay--;
+      } else {
+        closeBtn.innerHTML='';
+        closeBtn.className='over-close';
+      }
+     }
+     function showOverlay() {
+      console.log('delay:'+close_delay);
+      if(parseInt(close_delay)>0) {
+        delay();
+      } else {
+        closeBtn.className = 'over-close';
+      }
+      overlay.style.display='block';
+     }
+
+     closeBtn.addEventListener('click',function(e) {
+      overlay.style.display='none';
+      player_.play();
+     }, false);
+
+     this.on("pause", function(){
+      if (!this.seeking() && this.paused()) {
+        // Show overlay
+        showOverlay();
+      }
+     });
+
+     this.on('play', function(e) {
+      // Hide overlay
+      overlay.style.display='none';
+     });
+     if(show_on_start) {
+      this.pause(); showOverlay();
+     } else {
+      overlay.style.display='none';
+     }
+  });
+         
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script>  
+</body>
 </html>
