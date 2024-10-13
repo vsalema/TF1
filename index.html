@@ -1,3 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>JWPlayer with hls.js engine and P2P demo</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-jwplayer-hlsjs@0.1.1/dist/jwplayer.hlsjs.min.js"></script>
+    <script src="//ssl.p.jwpcdn.com/player/v/8.30.0/jwplayer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-hls@latest/dist/hls.min.js"></script>
+    <style>
+        #wrapper {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="player"></div>
+</div>
+
+<script>
+    jwplayer.key = "uoW6qHjBL3KNudxKVnwa3rt5LlTakbko9e6aQ6VUyKQ=";
+    var p2pConfig = {
+        live: false,        // set to true in live mode
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
+        // Other p2pConfig options provided by CDNBye
+    }
+    const isSamsungBrowser = navigator.userAgent.indexOf('SamsungBrowser') > - 1;
+    if (!isSamsungBrowser && !Hls.P2pEngine.isMSESupported() || Hls.P2pEngine.getBrowser() === 'Mac-Safari') {
+        // use ServiceWorker based p2p engine, need additional file sw.js
+        new Hls.P2pEngine.ServiceWorkerEngine(p2pConfig)
+    }
+    var player = jwplayer("player");
+    Hls.P2pEngine.tryRegisterServiceWorker(p2pConfig).then(() => {
+        player.setup({
+            file: "https://live-tsf-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4ODIwODE0LCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODgwNjQxNCwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS85OTkwNjcxYjk2NjM0ZDc5OTU1MjM1ODM1MmIyNTcwYS90ZjEtc2VyaWVzLWZpbG0tY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.TZS3wMAk9T-r-jkiBgbuQoEdYDGDwuRfWEsxnGx61PU/out/v1/9990671b96634d799552358352b2570a/tf1-series-film-cmaf/index_12_0.m3u8?CMCD=cid%3D%22a47319e0f2ff%22%2Cmtp%3D181500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%2282957d58-3fd6-4427-9af5-1e40228e5ffa%22",
+            width: 512,
+            height: 288,
+            autostart: true,
+            hlsjsdefault: true,
+            hlsjsConfig: {
+                liveSyncDurationCount: 10,
+                // debug: true,
+                // Other hlsjsConfig options provided by hls.js
+                p2pConfig
+            },
+        });
+    })
+    jwplayer_hls_provider.attach();
+</script>
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
