@@ -3,6 +3,19 @@
 <head>
     <script src='https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js'></script>
     <script>jwplayer.key='cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=';</script>
+
+<link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+    .container {
+	margin: 20px auto;
+	width: 600px;
+}
+video {
+	width: 100%;
+}
+  </style>
 </head>
 <body>
     <div id="player">Loading the player...</div>
@@ -40,7 +53,46 @@ const url2 = "http://azrotv.com/pyr/msg/geo/playlist.m3u8";
   "width": "100%"
 };
   </script>
+  <div class="container">
+	<video hidden autoplay controls crossorigin playsinline poster=""></video>
+</div>
+<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
+<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
   
+<script src="https://cdnjs.cloudflare.com/polyfill/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+<script src="https://unpkg.com/plyr@3"></script>
+  <script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  const source = 'https://live-tsf-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4ODIwODE0LCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODgwNjQxNCwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS85OTkwNjcxYjk2NjM0ZDc5OTU1MjM1ODM1MmIyNTcwYS90ZjEtc2VyaWVzLWZpbG0tY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.TZS3wMAk9T-r-jkiBgbuQoEdYDGDwuRfWEsxnGx61PU/out/v1/9990671b96634d799552358352b2570a/tf1-series-film-cmaf/index_12_0.m3u8?CMCD=cid%3D%22a47319e0f2ff%22%2Cmtp%3D181500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%2282957d58-3fd6-4427-9af5-1e40228e5ffa%22';
+  const video = document.querySelector('video');
+
+  // For more options see: https://github.com/sampotts/plyr/#options
+  // captions.update is required for captions to work with hls.js
+  const player = new Plyr(video, { captions: { active: true, update: true, language: 'en' } });
+
+  if (!Hls.isSupported()) {
+    video.src = source;
+  } else {
+    // For more Hls.js options, see https://github.com/dailymotion/hls.js
+    const hls = new Hls();
+    hls.loadSource(source);
+    hls.attachMedia(video);
+    window.hls = hls;
+
+    // Handle changing captions
+    player.on('languagechange', () => {
+      // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+      setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+    });
+  }
+
+  // Expose player so it can be used from the console
+  window.player = player;
+});
+  
+  </script>
   
   </body>
 </html>
