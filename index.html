@@ -1,98 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <script src='https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js'></script>
-    <script>jwplayer.key='cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=';</script>
+<meta name="theme-color" content="#ff0015">  
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+<title>SIC</title>
+<!-- LOAD CDN CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
+
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
+
+   
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
+
+
+
+<!-- Splide Slider CSS -->
+
+
+
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
+
+ 
+ <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
+       
+
+  
 
 <style>
-    .container {
-	margin: 20px auto;
-	width: 600px;
-}
+#myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+
+  
+  }
+
 video {
 	width: 100%;
 }
+
+ .row > * {
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .0);
+  padding-left: calc(var(--bs-gutter-x) * .0);
+  margin-top: var(--bs-gutter-y);
+} 
+  
+  
   </style>
-</head>
+  
+  
+  </head>
 <body>
-    <div id="player">Loading the player...</div>
-    <script>
-        // Setup the player
-        const player = jwplayer('player').setup({
-            file: 'https://live-tf1-hls-ssai.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4ODEzNjEwLCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODc5OTIxMCwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS8yYTVlZjJhNGNlNGE0MTIwOWUwYTg4MTA3NGQxNTkzMi90ZjEtY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.FYRbDLUmjVDZqU3-tDPGSc-NrGyNnRi6EkEx_qpObrQ/out/v1/2a5ef2a4ce4a41209e0a881074d15932/tf1-cmaf/index_1.m3u8?bpkio_serviceid=9023effe3c16b0475d35e9f31c778b5c&bpkio_sessionid=10d0e38b255-55b78fbf-af99-409b-a503-275206bbf731&category=all&mm_sp'
-        });
-const url2 = "http://azrotv.com/pyr/msg/geo/playlist.m3u8";
-        // Listen to an event
-        player.on('pause', (event) => {
-            alert('Why did my user pause their video instead of watching it?');
-        });
+ 
+ <!-- Start Pre Loader -->
 
-        // Call the API
-        const bumpIt = () => {
-            const vol = player.getVolume();
-            player.setVolume(vol + 10);
-        }
-        bumpIt();
+
+
+
     
+   
+    
+   
+<!-- Start Page Content Area -->
+<div class="page-content-area vfx-item-ptb pt-0">
 
-  var jwDefaults = {
-  "advertising": {},
-  "aspectratio": "16:9",
-  "autostart": true,
-  "controls": true,
-  "displaytitle": false,
-  "height": 270,
-  "key": "UgmuBvcyfhnq7mFR7e+sjNFt2fSDmuweCTm+eEnueja2YRfhnpEzFDkEvtk=",
-  "ph": 1,
-  "pid": "CvLCxQsq",
-  "repeat": false,
-  "stretching": "uniform",
-  "width": "100%"
-};
-  </script>
-  <div class="container">
-	<video hidden autoplay controls crossorigin playsinline poster=""></video>
-</div>
-<!-- Plyr resources and browser polyfills are specified in the pen settings -->
-<!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
-<script src="https://cdn.rawgit.com/video-dev/hls.js/18bb552/dist/hls.min.js"></script>
+  <div class="container-fluid bg-dark video-player-base"> 
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="video-posts-video">         
+          
+              <video id="v_player" class="video-js vjs-big-play-centered skin-blue vjs-16-9" controls preload="auto" playsinline crossorigin="anonymous" width="640" height="450" poster="" data-setup="{}" autoplay="true">
+							  	
+		  	<!-- video source -->
+		            <source src="https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/tf1plus/tf1.m3u8" type="application/x-mpegURL" /> 
+          
+			<!-- worning text if needed -->
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+                 
+        </div>
+      </div>
+    </div>  
+  </div>
+
+ 
+<!-- End Page Content Area --> 
+
+
+
+
+
+<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
+
+
+ 
+
+ <script src="https://www.goiptv.top/site_assets/videojs_player/plugins/videojs-chromecast.min.js"></script>
   
-<script src="https://cdnjs.cloudflare.com/polyfill/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
-<script src="https://unpkg.com/plyr@3"></script>
-  <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
-  const source = 'https://live-tsf-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI5MC4zLjEwNC4xODEiLCJjbWNkIjoiIiwiZXhwIjoxNzI4ODIwODE0LCJnaWQiOiIwYzk1NWQ5YmNmNmY0NTYwOTk2Zjc0NzMyYjI3M2NkNyIsImlhdCI6MTcyODgwNjQxNCwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS85OTkwNjcxYjk2NjM0ZDc5OTU1MjM1ODM1MmIyNTcwYS90ZjEtc2VyaWVzLWZpbG0tY21hZiIsInN1YiI6IjBjOTU1ZDliY2Y2ZjQ1NjA5OTZmNzQ3MzJiMjczY2Q3In0.TZS3wMAk9T-r-jkiBgbuQoEdYDGDwuRfWEsxnGx61PU/out/v1/9990671b96634d799552358352b2570a/tf1-series-film-cmaf/index_12_0.m3u8?CMCD=cid%3D%22a47319e0f2ff%22%2Cmtp%3D181500%2Cot%3Dm%2Csf%3Dh%2Csid%3D%2282957d58-3fd6-4427-9af5-1e40228e5ffa%22';
-  const video = document.querySelector('video');
+ <script>
+        var player = videojs('v_player',{techOrder:['chromecast','html5']});
+    
+        player.viavi({
+            shareMenu: false,
+            
+            video_id: 'livetv19',
+            resume: true,
+            contextMenu: false,
+                      buttonRewind: false,
+          buttonForward: false,
+                      
+            mousedisplay:true,
+            textTrackSettings: false             
+        });
 
-  // For more options see: https://github.com/sampotts/plyr/#options
-  // captions.update is required for captions to work with hls.js
-  const player = new Plyr(video, { captions: { active: true, update: true, language: 'en' } });
+        player.pip();
 
-  if (!Hls.isSupported()) {
-    video.src = source;
-  } else {
-    // For more Hls.js options, see https://github.com/dailymotion/hls.js
-    const hls = new Hls();
-    hls.loadSource(source);
-    hls.attachMedia(video);
-    window.hls = hls;
+        
+        player.chromecast({ metatitle: '', metasubtitle: 'Release : ' });         
+      
+      
 
-    // Handle changing captions
-    player.on('languagechange', () => {
-      // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
-      setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
-    });
-  }
+         player.on('vroll', function(event, data) {
+            var ad_id = data.id;
+            var action = data.action;
 
-  // Expose player so it can be used from the console
-  window.player = player;
-});
-  
-  </script>
-  
-  </body>
+            //alert(ad_id);
+            //alert(action);
+
+           });
+
+          
+      
+     player.ready(function(){
+     var player_ = this;
+     var show_on_start =true;
+     var close_delay=5;
+     var parent = this.el().parentNode;
+     console.log(parent.id);
+     var closeBtn = parent.querySelector('.over-close');
+     var overlay = parent.querySelector('.div-over');
+     var timer;
+     function delay() {
+      clearTimeout(timer);
+      if(parseInt(close_delay)>0) {
+        closeBtn.innerHTML=close_delay;
+        var timer =window.setTimeout(delay, 1000);
+        close_delay--;
+      } else {
+        closeBtn.innerHTML='';
+        closeBtn.className='over-close';
+      }
+     }
+     function showOverlay() {
+      console.log('delay:'+close_delay);
+      if(parseInt(close_delay)>0) {
+        delay();
+      } else {
+        closeBtn.className = 'over-close';
+      }
+      overlay.style.display='block';
+     }
+
+     closeBtn.addEventListener('click',function(e) {
+      overlay.style.display='none';
+      player_.play();
+     }, false);
+
+     this.on("pause", function(){
+      if (!this.seeking() && this.paused()) {
+        // Show overlay
+        showOverlay();
+      }
+     });
+
+     this.on('play', function(e) {
+      // Hide overlay
+      overlay.style.display='none';
+     });
+     if(show_on_start) {
+      this.pause(); showOverlay();
+     } else {
+      overlay.style.display='none';
+     }
+  });
+         
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script>  
+</body>
 </html>
