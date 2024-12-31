@@ -92,7 +92,11 @@ video {
     </div>  
   </div>
 
- 
+ <script>var vid1=videojs('v_player');vid1.persistvolume({namespace:"videojs-user-volume"});vid1.on('dblclick',function(){vid1.requestFullscreen();});vid1.on('dblclick',function(){vid1.exitFullscreen();});</script>
+<!--script>vid1.on("play",function(e){console.log('Hls started!');setTimeout(function() {vid1.pause()}, 3600000); }); </script-->
+<script>function close(){jQuery('#vjs-poster-onscreen').html('');}
+function update(){jQuery.get("https://sv7.data-stream.top/getViewers.php?c=tf3-HD",function(data){jQuery("#viewers").html(data);});setTimeout(function(){update();},120*1000);}
+update();</script>
 <!-- End Page Content Area --> 
 
 
