@@ -15,7 +15,7 @@
 
    
 <link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
-
+<link rel="stylesheet" href="https://www.stream4free.tv/media/com_jchoptimize/assets2/jscss.php?f=243e62771b3e7ecc6534b02d9e0640a58adea2d37467c4b1b1df828e849b527b&type=css&gz=gz">
 
 
 <!-- Splide Slider CSS -->
@@ -77,12 +77,11 @@ video {
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="video-posts-video">         
           
-              <video id="v_player" class="video-js vjs-big-play-centered skin-blue vjs-live-display vjs-16-9" controls preload="auto" playsinline crossorigin="anonymous" width="640" height="450" poster="" data-setup="{}" autoplay="true">
+              <video id="v_player" class="video-js vjs-big-play-centered skin-blue vjs-live-display vjs-16-9" controls preload="auto" playsinline crossorigin="anonymous" width="640" height="450" poster="https://www.stream4free.tv/images/playerbackground/tf1.jpg" data-setup="{}" autoplay="true">
 							  	
 		  	<!-- video source -->
-		           <source src="https://sv7.data-stream.top/d66724dcc98c1982801e30b7fdf0e8dbf010029dd3d20136f6029e21159db864/hls/tf3-HD.m3u8" type="application/x-mpegURL">
-<source src="https://sv7.data-stream.top:8443/live/tf3-HD/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8xMC8yMDI1IDk6NDQ6MTggUE0maGFzaF92YWx1ZT1PcWx6TFd5a2hmdTlUZmlHYjdZWS9RPT0mdmFsaWRtaW51dGVzPTMwJnN0cm1fbGVuPTEx" type="application/x-mpegURL">
-          
+		           <source src="https://sv7.data-stream.top/f1b97b751fb8a091c24ce77144316289fd47bfac07aca7da21992b05b6a0e7ca/hls/tf3-HD.m3u8" type="application/x-mpegURL">
+<source src="https://sv7.data-stream.top:8443/live/tf3-HD/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8xMC8yMDI1IDEwOjA2OjQ3IFBNJmhhc2hfdmFsdWU9eFZOUkhTbHdqQ2dWdmJ0d2hrSUdNZz09JnZhbGlkbWludXRlcz0zMCZzdHJtX2xlbj0xMQ==" type="application/x-mpegURL">
 			<!-- worning text if needed -->
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 </video>
@@ -92,7 +91,27 @@ video {
     </div>  
   </div>
 
- <script>var vid1=videojs('v_player');vid1.persistvolume({namespace:"videojs-user-volume"});vid1.on('dblclick',function(){vid1.requestFullscreen();});vid1.on('dblclick',function(){vid1.exitFullscreen();});</script>
+ 
+	
+	
+	<div class="vjs-poster-onscreen" id="vjs-poster-onscreen">
+<a class="closeButton" id="closeButton" href="javascript:close();"></a>
+<div id="ads" style="z-index:989;">
+<center>
+</center>
+</div>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>var vid1=videojs('v_player');vid1.persistvolume({namespace:"videojs-user-volume"});vid1.on('dblclick',function(){vid1.requestFullscreen();});vid1.on('dblclick',function(){vid1.exitFullscreen();});</script>
 <!--script>vid1.on("play",function(e){console.log('Hls started!');setTimeout(function() {vid1.pause()}, 3600000); }); </script-->
 <script>function close(){jQuery('#vjs-poster-onscreen').html('');}
 function update(){jQuery.get("https://sv7.data-stream.top/getViewers.php?c=tf3-HD",function(data){jQuery("#viewers").html(data);});setTimeout(function(){update();},120*1000);}
@@ -101,9 +120,20 @@ update();</script>
 
 
 
+	
+	
+	
+	<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","duration":"PT37M14S","name":"TF1 Live Streaming","description":" France TF1 Live stream, 1ere chaine de television francaise en direct live video streaming","contentURL":"https://sv7.data-stream.top/f1b97b751fb8a091c24ce77144316289fd47bfac07aca7da21992b05b6a0e7ca/hls/tf3-HD.m3u8","thumbnailUrl":"https://www.stream4free.tv/images/avatars/tf1.jpg","uploadDate":"2014-10-27T14:00:00+00:00","publication":[{"@type":"BroadcastEvent","isLiveBroadcast":true,"startDate":"2014-10-27T18:00:00+00:00","endDate":"2030-10-27T18:37:14+00:00"}]}</script>
 
+<script>function close(){jQuery('#vjs-poster-onscreen').html('');}
+function update(){jQuery.get("https://sv7.data-stream.top/getViewers.php?c=tf3-HD",function(data){jQuery("#viewers").html(data);});setTimeout(function(){update();},120*1000);}
+update();</script>
 
-<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
+	
+	
+	
+	
+	<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
 
 
  
