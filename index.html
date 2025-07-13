@@ -7,36 +7,59 @@
   <title>CodePen Demo</title>
 
   <meta name="robots" content="noindex">
-<style>
-    .container {
+  <head>
+
+
+  <style>
+.group {
   position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
 }
 
-/* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+.group iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-  </style>
 
-  </head>
+#poster-image {
+                  background: url('https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_560bd5e65eefabee.jpg') center center;
+                background-size: cover;
+                bottom: 0;
+                left: 0;
+                opacity: 1.0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                height: 100%;
+                width: 100%;
+  transition: all 0.3s ease-in;
+}
 
+</style>
+</head>
 <body>
-   <div class="container">
-  <iframe class="responsive-iframe" src="https://www.livehdtv.com/yayin/?kanal=123&yayin= ch123&guvenlik=$2y$10$zQSi02GnjJ16Th7RXg/9tuT0RsmCsu0SpW9HG4osKI/ZdPtJvbwpG"></iframe>
-</div> 
-
-
+<div class="group" id="process-video">
+  <div id="poster-image"></div>
+  <div class="video"></div>
   
+  <iframe  id="vimeo" src="https://www.livehdtv.com/yayin/?kanal=123&yayin=ch123&guvenlik=$2y$10$zQSi02GnjJ16Th7RXg/9tuT0RsmCsu0SpW9HG4osKI/ZdPtJvbwpG" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
   
+  <script>
+  
+  document.getElementById("poster-image").onclick = function () {fadeImage();};
+
+function fadeImage() {
+  document.getElementById("poster-image").style.opacity = "0";
+}
+  </script>
 </body>
 
 </html>
