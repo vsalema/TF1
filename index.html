@@ -1,223 +1,42 @@
-<HTML>
-<HEAD>
-<link rel="stylesheet" href="https://darkibox.com/css/main.css">
-    
-<script src="https://darkibox.com/js/jquery.min.js"></script>
-<script src="https://darkibox.com/js/xupload.js"></script>
-<script src="https://darkibox.com/js/jquery.cookie.js"></script>
-<script>
-$.cookie('file_id', '6239098', { expires: 10 });
-$.cookie('aff', '76', { expires: 10 });
-$.cookie('ref_url', 'darkiworld2025.com', { expires: 10 });
-</script>
-</HEAD>
-<BODY topmargin=0 leftmargin=0 style="background:transparent;">
+<!DOCTYPE html>
+<html lang='en' class=''>
 
+<head>
 
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
 
-
-
-    <div style="position:relative;">
-    
-
-    
-
-		<div id="adbd" class="overdiv">
-			<div>Disable ADBlock plugin and allow pop-ups in your browser to watch video</div>
-		</div>
-
-		<div id="play_limit_box">
-		<a href="https://darkibox.com/premium.html" target="_blank">Upgrade your account</a> to watch videos with no limits!
-		</div>
-
-    <link href="https://darkibox.com/player/videojs7/video-js.css?v=" rel="stylesheet">
-<link rel="stylesheet" href="https://darkibox.com/node_modules/videojs-brand/dist/videojs-brand.css">
-            
-            <div id='vplayer' style="width:100%;height:100%;text-align:center;">
-                
-            <video id="vjsplayer"
-			    class="video-js vjs-big-play-centered vjs-16-9 vjs-theme-"
-			    width="940" height="508"
-			    controls 
-			    autoplay
-          preload="auto" >
-			    <track kind="captions" src="https://dl34.darkibox.com/vtt/02/01247/ode1651y2olc_eng.vtt" srclang="eng" label="English">
-<track kind="captions" src="https://dl34.darkibox.com/vtt/02/01247/ode1651y2olc_fre.vtt" srclang="fre" label="French">
-<track kind="captions" src="https://darkibox.com/srt/empty.vtt" srclang="th" label="Upload SRT" id="x182">
-			</video></div>
-
-<script src="https://darkibox.com/player/videojs7/video.min.js?v="></script>
-<script src="https://darkibox.com/node_modules/videojs-brand/dist/videojs-brand.min.js"></script>
-<script src="https://darkibox.com/player/videojs7/videojs.hotkeys.min.js"></script>
-
+  <meta name="robots" content="noindex">
 <style>
-		.vjs-text-track-cue > div {
-			text-shadow: 1px 1px 2px transparent !important;
-			font-family: Tahoma !important;
-			padding-left: 0.3em  !important;
-			padding-right: 0.3em  !important;
-			padding-bottom: 0.2em  !important;
-			border-radius: 6px;
-			line-height: 1.43em;
-		}
-		</style><script src="https://darkibox.com/js/localstorage-slim.js"></script><link href="https://darkibox.com/player/videojs7/videojs-quality-menu.css" rel="stylesheet">
-						<script src="https://darkibox.com/player/videojs7/videojs-quality-menu.min.js"></script><script src="https://darkibox.com/player/videojs7/silvermine-videojs-chromecast.min.js"></script>
-			   		<link href="https://darkibox.com/player/videojs7/silvermine-videojs-chromecast.css" rel="stylesheet">
-			   		<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script><script src="https://darkibox.com/player/videojs7/silvermine-videojs-airplay.min.js"></script>
-			   		<link href="https://darkibox.com/player/videojs7/silvermine-videojs-airplay.css" rel="stylesheet">
-
-<style>
-
-.video-js {
-	width:100%;
-	height:100%;
-}
-.vjs-texttrack-settings {
-  /*display: none;*/
-}
-.vjs-quality-selector .vjs-menu {
-	width: 12em !important;
-	left: -4.5em !important;
-}
-.vjs-menu li {
-	text-transform: none;
-}
-.vjs-quality-menu-wrapper .vjs-menu {
-	width: 12em !important;
-	left: -4.5em !important;
-}
-.vjs-quality-menu-item-sub-label {
-	display: none;
-}
-</style>
-
-
-    </div>
-
-
-
-
-<script type='text/javascript'>
-var player = videojs('vjsplayer',{
-								//fluid: true,
-								sources: [{src: "https://livetvde.net/tf1/index.m3u8?token=0af89ce59df3b2988dab55f951acb9a307045301-adc7ee7057d73236d7b26b109c23531c-1752402940-1752392140", type: "application/x-mpegURL"}],
-								poster: "https://dl34.darkibox.com/i/02/01247/ode1651y2olc.jpg",
-								controlBar: { 
-								    children: [
-								    	'playToggle', 
-								    	'volumePanel', 
-								    	'autoplay',
-                      'currentTimeDisplay', 
-								    	'progressControl', 
-								    	'liveDisplay', 
-								    	'seekToLive', 
-								    	'durationDisplay', 
-								    	'customControlSpacer', 
-								    	'playbackRateMenuButton', 
-								    	'chaptersButton', 
-								    	'descriptionsButton', 
-								    	'subsCapsButton', 
-								    	'audioTrackButton', 
-								    	'pictureInPictureToggle',
-								    	'qualitySelector',
-								    	'fullscreenToggle']
-								},
-								plugins:{
-										 chromecast: {},airPlay: {}
-										}
-								,techOrder: [ 'chromecast', 'html5' ],playbackRates: [1,4,8,16]
-								});
-player.brand({
-  	image: "",
-    
-  title: "View on Darkibox",
-    destination: "https://",
-    destinationTarget: "_blank"
-  });
-player.ready(function() {
-	this.hotkeys({volumeStep: 0.1, seekStep: 5, enableVolumeScroll: true});
-	
-			$(".vjs-fg-color > select").append($('<option>', {value:'#FFFFFF', text:'#FFFFFF'})).val('#FFFFFF');
-			$(".vjs-text-opacity > select").append($('<option>', {value:'1', text:'100%'})).val('1');
-			$(".vjs-bg-color > select").append($('<option>', {value:'#303030', text:'#303030'})).val('#303030');
-			$(".vjs-bg-opacity > select").append($('<option>', {value:'0.3', text:'30%'})).val('0.3');
-			$(".vjs-font-percent > select").append($('<option>', {value:'1', text:'100%'})).val('1');
-		
-});
-
-var vvplay,vvad;
-var prevt=0, tott=0, v2done=0, lastt=0;;
-$.ajaxSetup({ headers: { 'Content-Cache': 'no-cache' } });
-
-player.on('play', function(){ doPlay(); });
-player.on('ended', function(){ $('div.video_ad').show(); $('#play_limit_box').show();ls.remove('tt2a00da139229'); });
-player.on('timeupdate',function() {
-    if(5>0 && player.currentTime()>=5 && vvad!=1){vvad=1;$('div.video_ad_fadein').fadeIn('slow');}
-    
-    if(player.currentTime()>=lastt+5 || player.currentTime()<lastt){ lastt=player.currentTime(); ls.set('tt2a00da139229', Math.round(lastt), { ttl: 60*60*24*7 }); }
-});
-function doPlay()
-{
-  $('div.video_ad').hide();
-  $('#over_player_msg').hide();
-  if(vvplay)return;
-  vvplay=1;
-  adb=0;
-  if( window.cRAds === undefined ){ adb=1; }
-  $.get('https://www.livehdtv.com/token.php?stream=tf1'+adb, function(data) {$('#fviews').html(data);} );
-
-  $('.vjs-captions-menu-item:last').click(function() { showCCform(); });window.setTimeout( function (){ player.hasStarted(false); player.currentTime(0); player.dispose(); $('#vplayer').append('<img  src="https://dl34.darkibox.com/i/02/01247/ode1651y2olc.jpg" style="width:100%;height:100%;">'); $('#play_limit_box').show(); }, 1800*1000 );var lastt = ls.get('tt2a00da139229'); if(lastt>0){ player.currentTime(lastt); }
+    .container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
-function showCCform()
-{
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+  </style>
+
+  </head>
+
+<body>
+   <div class="container">
+  <iframe class="responsive-iframe" src="https://www.livehdtv.com/yayin/?kanal=123&yayin= ch123&guvenlik=$2y$10$zQSi02GnjJ16Th7RXg/9tuT0RsmCsu0SpW9HG4osKI/ZdPtJvbwpG" allow="autoplay" ></iframe>
+</div> 
+
+
   
-videojs('vjsplayer').pause();
+  
+</body>
 
-var $dd=	$("<div />").css({
-   position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-    zIndex: 1000000,
-    background: "rgba(10%, 10%, 10%, 0.4)",
-    "text-align": "center"
-});
-$("<iframe />").css({
-    width: "60%",
-    height: "60%",
-    zIndex: 1000001,
-    "margin-top": "50px"
-}).prop({'src':'https://www.livehdtv.com/token.php?stream=tf1', 'frameborder':'0', 'scrolling':'no'}).appendTo($dd);
-
- $dd.click(function (){ $(this).remove(); player.play(); });
- $dd.appendTo( $('#vplayer') );
-}
-
-
-
-player.qualityMenu({resolutionLabelBitrates: false, labels:{'1038':'UHD'}, });
-
-</script>
-
-
-
-
-<Script>
-$(function() {
- 
-});
-</Script>
-
-
-
-
-<!-- Javascript Alt Ads code start -->
-	
-	
-	
-<!-- Javascript Alt Ads code end -->
-
-
-</BODY></HTML>
+</html>
