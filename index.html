@@ -4,61 +4,64 @@
 <head>
 
   <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
+  <title>tf1</title>
 
   <meta name="robots" content="noindex">
   <head>
-
-
-  <style>
-.group {
+<style>
+    .poster {
   position: relative;
-      padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
+  display: inline-flex;
+}
+.poster:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_560bd5e65eefabee.jpg);
+  background-size: cover;
+  transition: 1s ease;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.poster-active:after {
+  opacity: 0;
+  pointer-events: none;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
-.group iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
-
-#poster-image {
-                  background: url('https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_560bd5e65eefabee.jpg') center center;
-                background-size: cover;
-                bottom: 0;
-                left: 0;
-                opacity: 1.0;
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 10;
-                height: 100%;
-                width: 100%;
-  transition: all 0.3s ease-in;
-}
-
 </style>
 </head>
 <body>
-<div class="group" id="process-video">
-  <div id="poster-image"></div>
-  <div class="video"></div>
-  
-  <iframe  id="vimeo" src="https://www.livehdtv.com/yayin/?kanal=123&yayin=ch123&guvenlik=$2y$10$zQSi02GnjJ16Th7RXg/9tuT0RsmCsu0SpW9HG4osKI/ZdPtJvbwpG" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div class="poster container">
+  <iframe class="responsive-iframe"  id="myIframe"  poster="http://jamhouse.com.au/media/video/orchlapse.jpg" src="https://www.livehdtv.com/yayin/?kanal=123&yayin=ch123&guvenlik=$2y$10$zQSi02GnjJ16Th7RXg/9tuT0RsmCsu0SpW9HG4osKI/ZdPtJvbwpG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-  
-  <script>
-  
-  document.getElementById("poster-image").onclick = function () {fadeImage();};
+<script>
+    const poster = document.querySelector(".poster");
+poster.addEventListener("click", removePoster);
 
-function fadeImage() {
-  document.getElementById("poster-image").style.opacity = "0";
+function removePoster() {
+  poster.classList.add("poster-active");
+  document.querySelector("#myIframe").src += "?autoplay=1";
 }
+
   </script>
 </body>
 
