@@ -1,60 +1,38 @@
 <!DOCTYPE html>
 <html lang='en' class=''>
+
 <head>
-<meta charset='UTF-8'>
+
+  <meta charset='UTF-8'>
   <title>CodePen Demo</title>
 
   <meta name="robots" content="noindex">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css">
-<link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <style>
+    
 
-  <style id="INLINE_PEN_STYLESHEET_ID">
-    .containers {
-	margin: 20px auto;
-	width: 100%;
-	height: 100%;
+.wa-block-body {
+  padding: 10px 15px 15px;
+  margin-bottom: 20px;
 }
-
-.container {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
 }
   </style>
-</head>
+
+  </head>
 
 <body>
-  <div class="container">
-	<video id="myVideo" autoplay controls crossorigin playsinline poster=""></video>
-</div>
-<!-- Plyr resources and browser polyfills are specified in the pen settings -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js">
+  <div class="wa-block-body">
+			<iframe frameborder="0" style="height: 544px;width: 100%;overflow-y: hidden;overflow-x: hidden;" src="https://oqee.tv/home/channels/536/play" onload="this.onload=null;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+		</div>
   
-<script src="https://cdnjs.cloudflare.com/polyfill/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
-<script src="https://cdn.jsdelivr.net/npm/plyr@3"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const source = 'https://viamotionhsi.netplus.ch/live/eds/tf1hd/browser-dash/tf1hd.mpd';
-  const video = document.querySelector('video');
-  // For options (second argument) see: https://github.com/sampotts/plyr/#options
-  const player = new Plyr(video);
-  // Expose player so it can be used from the console
-  window.player = player;
-
-  // For more Shaka Player options, see: https://github.com/google/shaka-player
-  if (shaka.Player.isBrowserSupported()) {
-    // Install built-in polyfills
-    shaka.polyfill.installAll();
-    const shakaInstance = new shaka.Player(video);
-    shakaInstance.load(source);
-  } else {
-    console.warn('Browser is not supported!');
-  }
-});
   
-  </script>
 </body>
 
 </html>
